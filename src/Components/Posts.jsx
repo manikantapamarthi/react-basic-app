@@ -12,6 +12,20 @@ class Posts extends Component {
             this.setState({posts: response.data})
           })
   }
+
+  editPost(post) {
+    
+  }
+
+  deletePost(post) {
+    axios.delete(`http://localhost:3001/posts/${post}`)
+         .then(response => {
+                if(response.status) {
+                  window.location.reload();
+              }
+    })
+  }
+
   
   render(){
     return(
@@ -22,6 +36,8 @@ class Posts extends Component {
                 <li>{p.id}</li>
                 <li>{p.name}</li>
                 <li>{p.desc}</li>
+                <button onClick={() => this.deletePost(`${p.id}`)}>Delete</button>
+                <button>onClick={() => this.editPost(`${p.id}`)}</button>
               </ul>  
             )
           }
