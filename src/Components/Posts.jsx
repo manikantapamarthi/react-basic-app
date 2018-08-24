@@ -37,7 +37,7 @@ class Posts extends Component {
                 <li>{p.name}</li>
                 <li>{p.desc}</li>
                 <button onClick={() => this.deletePost(`${p.id}`)}>Delete</button>
-                <button>onClick={() => this.editPost(`${p.id}`)}</button>
+                <button onClick={() => this.editPost(p)}>Edit</button>
               </ul>  
             )
           }
