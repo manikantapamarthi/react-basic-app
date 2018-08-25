@@ -14,7 +14,11 @@ class Form extends Component {
         name:  this.state.name,
         desc: this.state.desc
       }
-    )
+    ).then((response)  => {
+      if(response.status) {
+        window.location.href = "/posts"
+      }
+    })
   }
   render() {
     
